@@ -4,12 +4,12 @@
 
 """
 # Declaração das veriaveis numero1 e numero2
-numero1 = 12
-numero2 = 14
+numero1 = int(input("digite um número inteiro: "))
+numero2 = int(input("digite um número inteiro: "))
 
 soma = numero1 + numero2
 
 # imprime/exibe algum texto na tela, nesse caso "soma"
-print(soma)   
+print(f"{numero1} + {numero2} = {soma}")   
 
 # Questão concluida!

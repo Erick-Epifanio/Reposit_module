@@ -9,9 +9,9 @@ O programa deve calcular o preço total e exibir todas as informações, incluin
 
 """
 # Declaração das variaveis
-nome_do_produto = "Cadeira Infantil"
-Preco_unitario = 12.40
-Quantidade = 3
+nome_do_produto = str(input("Nome do produto: "))
+Preco_unitario = float(input("Valor unitario do produto: "))
+Quantidade = int(input("Quantidade: "))
 
 # Valor total da quantidade de cadeiras
 valor_total = Preco_unitario * Quantidade
