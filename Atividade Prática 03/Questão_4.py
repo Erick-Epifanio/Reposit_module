@@ -5,13 +5,23 @@ Faça um programa que determine se um ano inserido pelo usuário é bissexto ou 
 Um ano é bissexto se for divisível por 4, exceto anos centenários (divisíveis por 100) que não são divisíveis por 400.
 """
 
-anos = int(input("Determine quantos dias tem no ano: "))
+import os
+while True:
+    try:
+        ano = int(input("Determine quantos dias tem no ano: "))
 
-if anos % 4 == 0 and anos % 100 != 0:
-    print(f"{anos} é um ano bissexto.")
-elif anos % 400 == 0:
-    print(f"{anos} é um ano bissexto.")
-else:
-    print(f"{anos} não é um ano bissexto.")
+        if (ano % 4 == 0) and (ano % 100 != 0):
+            print(f"{ano} é um ano bissexto")
+        elif ano % 400 == 0:
+            print(f"{ano} é um ano bissexto")
+        else:
+            print(f"{ano} não é um ano bissexto")
 
-    #não consegui resolver, não entendi o enunciado
+        os.system("pause")
+        os.system("cls")
+    except KeyboardInterrupt:
+        print("saindo....")
+        break   
+        
+
+# Feito acompanhando o professor
