@@ -21,7 +21,7 @@ while True:
         idade = int(input("Digite sua idade: "))
         
         # verifica se a variavel idade é valido com as operações logicas abaixo
-        if  idade >= 0 and idade <= 13:
+        if  idade >= 0 and idade <= 12:
             print("Criança")
         elif idade >= 13 and idade <= 17:
             print("Adolecente")
