@@ -16,12 +16,18 @@ def tratamento_dos_dados():
                 
                 # entrada de dados do usuário, caso ele apenas aperte Enter, o valor será atribuido para não truncar
                 try:
-                    insert = int(input(">")) or 1
-                except ValueError:
-                    insert = 1
+                    insert = float(input(">")) or 1
+                    if insert > 0 and insert <= 10:
+                        # Atribuindo de forma dinamica o dicionario
+                        Dic_note[Fixed_name] = insert
 
-                # Atribuindo de forma dinamica o dicionario
-                Dic_note[Fixed_name] = insert
+
+                except ValueError:
+                    print(" a nota deve ser de 1 a 10!")
+                    os.system("pause")
+                    continue
+
+        # Modo de encerrar o loop (proposital)
         except KeyboardInterrupt:
             break
     
@@ -34,7 +40,7 @@ def media():
     for item in Dic_note.values():
         filtro.append(item)
     soma = (sum(filtro)) / len(filtro)
-    return f"Resultado {soma}"
+    return f"Resultado {soma:.2f}"
 
 tratamento_dos_dados()
 print(media())
