@@ -1,18 +1,31 @@
-import requests
+"""
 
+while True:
+    try:
+        def conparacao():
+            palavra = input("Digite a palavra: ").lower
+            if palavra == palavra[::-1]:
+                return "sim"
+            else:
+                return "não"
+        print(conparacao())
+    except KeyboardInterrupt:
+        break
+    
+"""
 
-def obter_usuario_aleatorio():
-    url = "https://randomuser.me/api/"
-    resposta = requests.get(url)
-    resposta.raise_for_status()
-    dados = resposta.json()
+def palindromo(texto):
+    texto_limpo = " ".join(letra.lower() for letra in texto if letra.isalnum())
+    
+    return texto_limpo == texto_limpo[::-1]
 
+frase = str(input("digite a frase: "))
 
-    user = dados["results"][0]
-    nome = user["name"]["first"] + " " + user["name"]["last"]
-    email = user["email"]
-    country = user["location"]["country"]
+resultado = palindromo(frase)
 
-    print(f"User: {nome}\nEmail: {email}\nCountry: {country}")
-
-obter_usuario_aleatorio()
+if resultado == True:
+    resposta = "sim"
+else:
+    resposta = "não"
+    
+print(f"{frase} é um palíndromo? {resposta}")

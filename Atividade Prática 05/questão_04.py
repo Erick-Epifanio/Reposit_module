@@ -1,22 +1,11 @@
-import requests
+import datetime
 
-def buscar_cotacao(moedas):
-    url = f'https://economia.awesomeapi.com.br/json/last/{moedas}-BRL'
-    resposta = requests.get(url)
-    resposta.raise_for_status()
-    dados = resposta.json()
+def calcular_idade_dias(ano_de_nascimento):
+    ano_atual = datetime.datetime.now().year
+    idade_anos = ano_atual - ano_de_nascimento
+    idade_dias = idade_anos * 365
+    return idade_dias
 
-    chave = moedas + "BRL"
+ano_nascimento = int(input("Digite o seu ano de nascimento: "))
 
-    if chave not in dados:
-        print("Moeda não encontrada")
-        return
-    
-    info = dados[chave]
-
-    print(f"Cotação:{moedas}/BRL\nValor Atual: {info["bid"]}\nValor maximo: {'high'}\nValor minimo: {info["low"]}\nUltima Atualização: {info["create_date"]}")
-
-
-moedas = input("Digite um codigo de moeda (Ex: USD, EUR, GBP): ").upper()
-
-buscar_cotacao(moedas)
+print(f"sua idade em dia é aproximadamente : {calcular_idade_dias(ano_nascimento)} dias")
